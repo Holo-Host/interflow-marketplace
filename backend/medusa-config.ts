@@ -44,10 +44,23 @@ module.exports = defineConfig({
     }
   ],
   modules: [
-    /* We are leaving the modules array empty for now. 
-       Medusa 2.0 will use internal 'in-memory' providers.
-       This prevents the "Module Not Found" crashes while we 
-       fix the production package installations.
-    */
+    {
+      resolve: "@medusajs/event-bus-redis",
+      options: { 
+        redisUrl: process.env.REDIS_URL 
+      },
+    },
+    {
+      resolve: "@medusajs/workflow-engine-redis",
+      options: { 
+        redisUrl: process.env.REDIS_URL 
+      },
+    },
+    {
+      resolve: "@medusajs/cache-redis",
+      options: { 
+        redisUrl: process.env.REDIS_URL 
+      },
+    },
   ]
 })

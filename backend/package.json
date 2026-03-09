@@ -23,9 +23,12 @@
   },
   "dependencies": {
     "@medusajs/admin-sdk": "2.11.3",
+    "@medusajs/cache-redis": "^2.13.3",
     "@medusajs/cli": "2.11.3",
-    "@medusajs/framework": "2.11.3",
+    "@medusajs/event-bus-redis": "^2.13.3",
+    "@medusajs/framework": "^2.13.3",
     "@medusajs/medusa": "2.11.3",
+    "@medusajs/workflow-engine-redis": "^2.13.3",
     "@mercurjs/algolia": "^1.5.3",
     "@mercurjs/b2c-core": "^1.5.3",
     "@mercurjs/commission": "^1.5.3",
@@ -48,10 +51,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ts-node": "^10.9.2",
+    "tsx": "latest",
     "typescript": "^5.6.2",
     "vite": "^5.2.11",
-    "yalc": "^1.0.0-pre.53",
-    "tsx": "latest"
+    "yalc": "^1.0.0-pre.53"
   },
   "engines": {
     "node": ">=20"
