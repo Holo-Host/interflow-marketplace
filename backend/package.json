@@ -36,7 +36,8 @@
     "@mercurjs/payment-stripe-connect": "^1.5.3",
     "@mercurjs/requests": "^1.5.3",
     "@mercurjs/resend": "^1.5.3",
-    "@mercurjs/reviews": "^1.5.3"
+    "@mercurjs/reviews": "^1.5.3",
+    "resend": "^6.9.3"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.13.3",

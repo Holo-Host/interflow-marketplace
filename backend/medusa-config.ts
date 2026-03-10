@@ -58,8 +58,21 @@ module.exports = defineConfig({
         redisUrl: process.env.REDIS_URL 
       },
     },
-    // We are removing the @medusajs/workflow-engine-redis block.
-    // Medusa will use its high-performance internal workflow engine 
-    // which is the recommended default for v2.13+.
+    {
+      resolve: "@medusajs/medusa/notification",
+      options: {
+        providers: [
+          {
+            resolve: "./src/modules/resend",
+            id: "resend",
+            options: {
+              channels: ["email"],
+              api_key: process.env.RESEND_API_KEY,
+              from: process.env.RESEND_FROM_EMAIL,
+            },
+          },
+        ],
+      },
+    },
   ]
 })
