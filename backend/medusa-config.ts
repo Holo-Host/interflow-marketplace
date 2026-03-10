@@ -52,20 +52,14 @@ module.exports = defineConfig({
       },
     },
     {
-      resolve: "@medusajs/workflow-engine-redis",
-      key: "workflow_engine",
-      options: { 
-        redis: {
-          url: process.env.REDIS_URL,
-        },
-      },
-    },
-    {
       resolve: "@medusajs/cache-redis",
       key: "cache",
       options: { 
         redisUrl: process.env.REDIS_URL 
       },
     },
+    // We are removing the @medusajs/workflow-engine-redis block.
+    // Medusa will use its high-performance internal workflow engine 
+    // which is the recommended default for v2.13+.
   ]
 })
