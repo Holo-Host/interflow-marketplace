@@ -45,20 +45,21 @@ module.exports = defineConfig({
   ],
   modules: [
     {
-      key: "event-bus-redis", // Added key
+      key: "event-bus-redis",
       resolve: "@medusajs/event-bus-redis",
       options: { 
         redisUrl: process.env.REDIS_URL 
       },
     },
     {
-      key: "workflow-engine-redis", // Added key
+      key: "workflow-engine-redis",
       resolve: "@medusajs/workflow-engine-redis",
       options: { 
         redisUrl: process.env.REDIS_URL 
       },
     },
     {
+      key: "cache", // Added this key
       resolve: "@medusajs/cache-redis",
       options: { 
         redisUrl: process.env.REDIS_URL 
