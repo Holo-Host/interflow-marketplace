@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Funnel_Display } from 'next/font/google';
+import { Chakra_Petch, Share_Tech_Mono } from 'next/font/google';
 
 import './globals.css';
 
@@ -11,21 +11,28 @@ import { retrieveCart } from '@/lib/data/cart';
 
 import { Providers } from './providers';
 
-const funnelDisplay = Funnel_Display({
-  variable: '--font-funnel-sans',
+const chakraPetch = Chakra_Petch({
+  variable: '--font-chakra-petch',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600']
+  weight: ['300', '400', '500', '600', '700']
+});
+
+const shareTechMono = Share_Tech_Mono({
+  variable: '--font-share-tech-mono',
+  subsets: ['latin'],
+  weight: ['400']
 });
 
 export const metadata: Metadata = {
   title: {
     template: `%s | ${
-      process.env.NEXT_PUBLIC_SITE_NAME || 'Mercur B2C Demo - Marketplace Storefront'
+      process.env.NEXT_PUBLIC_SITE_NAME || 'interflow — where communities exchange value'
     }`,
-    default: process.env.NEXT_PUBLIC_SITE_NAME || 'Mercur B2C Demo - Marketplace Storefront'
+    default: process.env.NEXT_PUBLIC_SITE_NAME || 'interflow — where communities exchange value'
   },
   description:
-    process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Mercur B2C Demo - Marketplace Storefront',
+    process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
+    'The decent marketplace. Buy digital services from real projects using HOT. Powered by Holochain & Unyt.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'),
   alternates: {
     languages: {
@@ -48,9 +55,14 @@ export default async function RootLayout({
   return (
     <html
       lang={htmlLang}
-      className=""
+      className={`${chakraPetch.variable} ${shareTechMono.variable}`}
     >
       <Head>
+        <link
+          rel="icon"
+          href="/favicon.svg"
+          type="image/svg+xml"
+        />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -138,7 +150,7 @@ export default async function RootLayout({
           href="https://api.mercurjs.com"
         />
       </Head>
-      <body className={`${funnelDisplay.className} relative bg-primary text-secondary antialiased`}>
+      <body className={`${chakraPetch.className} relative bg-primary text-secondary antialiased`}>
         <HtmlLangSetter />
         <Providers cart={cart}>{children}</Providers>
         <Toaster position="top-right" />

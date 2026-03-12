@@ -14,18 +14,20 @@
     --neutral-900: 22, 22, 22;
     --neutral-1000: 9, 9, 9;
 
-    /* Brand colors are used across all interactive elements such as buttons, links, inputs, etc. This color can define the overall feel and can elicit emotion. */
-    --brand-25: 247, 247, 247;
-    --brand-50: 238, 238, 238;
-    --brand-100: 226, 226, 226;
-    --brand-200: 198, 198, 198;
-    --brand-300: 163, 163, 163;
-    --brand-400: 115, 115, 115;
-    --brand-500: 82, 82, 82;
-    --brand-600: 64, 64, 64;
-    --brand-700: 27, 27, 27;
-    --brand-800: 22, 22, 22;
-    --brand-900: 9, 9, 9;
+    /* Brand colors — Interflow teal ramp
+       Derived from Holochain teal (#2C8C8C) → HoloFuel green (#3ECFA5).
+       Darker stops (700–900) pass WCAG AA contrast with white text. */
+    --brand-25: 240, 251, 249;
+    --brand-50: 218, 244, 238;
+    --brand-100: 188, 233, 222;
+    --brand-200: 148, 216, 200;
+    --brand-300: 100, 195, 175;
+    --brand-400: 62, 175, 160;
+    --brand-500: 44, 155, 148;
+    --brand-600: 36, 136, 136;
+    --brand-700: 30, 122, 122;
+    --brand-800: 26, 108, 110;
+    --brand-900: 20, 95, 98;
     
     /* Red colors are used across error states and in "destructive" actions. */
     --red-25: 254, 243, 242;
@@ -83,7 +85,7 @@
 :root {
     --bg-primary: var(--neutral-0);
     --bg-secondary: var(--neutral-25);
-    --bg-tertiary: var(--neutral-1000);
+    --bg-tertiary: 16, 58, 62;
 
     --bg-component-primary: var(--neutral-0);
     --bg-component-primary-hover: var(--neutral-25);
