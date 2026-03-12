@@ -48,6 +48,7 @@ module.exports = defineConfig({
         api_key: process.env.RESEND_API_KEY,
         from_email: process.env.RESEND_FROM_EMAIL,
     }
+   } 
   ],
   modules: [
     {
