@@ -65,5 +65,21 @@ module.exports = defineConfig({
         redisUrl: process.env.REDIS_URL 
       },
     },
+    {
+      resolve: "@medusajs/notification",
+      options: {
+        providers: [
+          {
+            resolve: "@mercurjs/resend",
+            id: "resend",
+            options: {
+              channels: ["email"],
+              api_key: process.env.RESEND_API_KEY,
+              from_email: process.env.RESEND_FROM_EMAIL,
+            },
+          },
+        ],
+      },
+    },
   ]
 })
